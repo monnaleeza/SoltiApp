@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Center SelectionVC-->
+        <scene sceneID="qeh-xo-NQx">
+            <objects>
+                <viewController storyboardIdentifier="CenterSelectionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qkh-jp-FMe" customClass="CenterSelectionVC" customModule="MadeoGenes_GC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1qo-AJ-QWG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqc-nV-hMc" userLabel="SvgView">
+                                <rect key="frame" x="107" y="25" width="200" height="60"/>
+                                <color key="backgroundColor" name="systembackground"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9cR-KW-qUP"/>
+                                    <constraint firstAttribute="height" constant="60" id="CMT-kt-OAL"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3Xm-0l-jik">
+                                <rect key="frame" x="107" y="25" width="200" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7xy-sv-LAB"/>
+                                    <constraint firstAttribute="height" constant="60" id="dDs-Fv-5am"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select active profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMk-Kl-1YC">
+                                <rect key="frame" x="84" y="130" width="246" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="28"/>
+                                <color key="textColor" name="EclipseColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bya-fg-Yi8">
+                                <rect key="frame" x="20" y="223.66666666666666" width="374" height="482.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" name="systembackground"/>
+                                <color key="sectionIndexBackgroundColor" name="systembackground"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SelectCenterTableCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectCenterTableCell" id="glR-hC-Zbr" customClass="SelectCenterTableCell" customModule="MadeoGenes_GC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="glR-hC-Zbr" id="0ve-0q-Z13">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="95"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWv-25-9no">
+                                                    <rect key="frame" x="5" y="10" width="364" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="Gbi-xL-3oX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
+                                                    <color key="tintColor" name="eclipseColor"/>
+                                                    <state key="normal" title="      Hope">
+                                                        <color key="titleColor" name="EclipseColor"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" name="systembackground"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="hWv-25-9no" secondAttribute="trailing" constant="5" id="9ej-Ua-xir"/>
+                                                <constraint firstItem="hWv-25-9no" firstAttribute="top" secondItem="0ve-0q-Z13" secondAttribute="top" constant="10" id="NQU-Ik-Zs2"/>
+                                                <constraint firstAttribute="bottom" secondItem="hWv-25-9no" secondAttribute="bottom" constant="5" id="fej-WU-CKC"/>
+                                                <constraint firstItem="hWv-25-9no" firstAttribute="leading" secondItem="0ve-0q-Z13" secondAttribute="leading" constant="5" id="s9j-0B-dyA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="systembackground"/>
+                                        <connections>
+                                            <outlet property="button" destination="hWv-25-9no" id="9q9-bI-vnR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qkh-jp-FMe" id="aHc-A6-PVv"/>
+                                    <outlet property="delegate" destination="qkh-jp-FMe" id="8cy-4c-yGg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="systembackground"/>
+                        <constraints>
+                            <constraint firstItem="Bya-fg-Yi8" firstAttribute="top" secondItem="UMk-Kl-1YC" secondAttribute="bottom" constant="60" id="1P1-O3-EJ0"/>
+                            <constraint firstItem="Bqc-nV-hMc" firstAttribute="centerX" secondItem="csi-oE-5hK" secondAttribute="centerX" id="3WM-yn-DxP"/>
+                            <constraint firstItem="3Xm-0l-jik" firstAttribute="top" secondItem="csi-oE-5hK" secondAttribute="top" constant="25" id="DHp-Bh-fU8"/>
+                            <constraint firstItem="Bqc-nV-hMc" firstAttribute="top" secondItem="csi-oE-5hK" secondAttribute="top" constant="25" id="QVw-CW-ivb"/>
+                            <constraint firstItem="3Xm-0l-jik" firstAttribute="centerX" secondItem="csi-oE-5hK" secondAttribute="centerX" id="V95-AM-u2o"/>
+                            <constraint firstItem="Bya-fg-Yi8" firstAttribute="leading" secondItem="csi-oE-5hK" secondAttribute="leading" constant="20" id="VVU-Ao-4Zw"/>
+                            <constraint firstItem="UMk-Kl-1YC" firstAttribute="centerX" secondItem="csi-oE-5hK" secondAttribute="centerX" id="WkX-DE-gOl"/>
+                            <constraint firstItem="csi-oE-5hK" firstAttribute="trailing" secondItem="Bya-fg-Yi8" secondAttribute="trailing" constant="20" id="XzK-o0-qai"/>
+                            <constraint firstItem="csi-oE-5hK" firstAttribute="bottom" secondItem="Bya-fg-Yi8" secondAttribute="bottom" constant="30" id="dtU-mf-2D2"/>
+                            <constraint firstItem="UMk-Kl-1YC" firstAttribute="top" secondItem="csi-oE-5hK" secondAttribute="top" constant="130" id="ol3-i2-cdJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="csi-oE-5hK"/>
+                    </view>
+                    <connections>
+                        <outlet property="SelectCenterBtn" destination="Bya-fg-Yi8" id="BFl-cv-Fhs"/>
+                        <outlet property="centertable" destination="Bya-fg-Yi8" id="UEw-86-04T"/>
+                        <outlet property="logoImage" destination="3Xm-0l-jik" id="Vsr-c8-m00"/>
+                        <outlet property="logoSvgView" destination="Bqc-nV-hMc" id="HOg-yC-wbA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TJ9-9T-2aR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63.768115942028992" y="-5.7065217391304355"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="225" height="85.5"/>
+        <namedColor name="EclipseColor">
+            <color red="0.22699999809265137" green="0.22699999809265137" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="eclipseColor">
+            <color red="0.22745098039215686" green="0.22745098039215686" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="systembackground">
+            <color red="0.96100002527236938" green="0.9649999737739563" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

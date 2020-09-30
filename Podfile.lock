@@ -1,0 +1,50 @@
+PODS:
+  - Alamofire (5.2.2)
+  - BadgeSwift (8.0.0)
+  - FAPanels (2.0.1)
+  - lottie-ios (3.1.8)
+  - LSDialogViewController (4.0)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
+  - SwiftSVG (2.3.2)
+  - Toast (4.0.0)
+  - YouTubePlayer (0.7.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - BadgeSwift
+  - FAPanels
+  - lottie-ios
+  - LSDialogViewController
+  - SDWebImage
+  - SwiftSVG
+  - Toast
+  - YouTubePlayer
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - BadgeSwift
+    - FAPanels
+    - lottie-ios
+    - LSDialogViewController
+    - SDWebImage
+    - SwiftSVG
+    - Toast
+    - YouTubePlayer
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  BadgeSwift: a81547ffde1f462bb5fc02e3fa3fdcbc1b888354
+  FAPanels: 050291ef601a1dc00fad888f83e74284cb86dd52
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  LSDialogViewController: ab7dd9a3e3facf95b386b7209401ac96bbdc3514
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
+  SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
+
+PODFILE CHECKSUM: d9c42d7e7589c6cf4733926bea590d785bb95f15
+
+COCOAPODS: 1.8.4
