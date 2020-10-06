@@ -11,12 +11,14 @@ class TermsOfConditionVC: UIViewController {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var textTV: UITextView!
+    @IBOutlet weak var arrowImg: UIImageView!
     @IBOutlet weak var acceptBtn: UIButton!
     var users : User?
     var centerWelcome : CenterWelcome?
     var centerLegal : CenterLegal?
     var delegate : StateDelegate?
-    var welcomedelegate : WelcomeVC?
+    var legalDelegate : DashboardVC?
+    var isLegalAccepted = false
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.initializeView()
@@ -29,8 +31,12 @@ class TermsOfConditionVC: UIViewController {
         let endpoint = "\(ServerURL.recordURL)\(String(format: EndPoint.legalaccepted))"
         WebServices.shared.getInforByToken((self.users?.token)!,endpoint: endpoint,method:"put") { (success, statusCode, response, detail, message) in
            if success {
-            self.delegate?.afteraccept()
-            self.delegate?.dismissDialog()
+            if self.isLegalAccepted {
+                self.legalDelegate?.dismissDialog()
+            } else{
+                self.delegate?.afteraccept()
+                self.delegate?.dismissDialog()
+            }
            }else{
                showToast(message ?? "")
            }
@@ -48,5 +54,6 @@ extension TermsOfConditionVC {
         acceptBtn.layer.borderWidth = 1.0
         acceptBtn.layer.borderColor = UIColor(named: "background")?.cgColor
         acceptBtn.setTitle(self.centerWelcome?.actionButton?.text,for: .normal)
+        arrowImg.isHidden = isLegalAccepted
     }
 }

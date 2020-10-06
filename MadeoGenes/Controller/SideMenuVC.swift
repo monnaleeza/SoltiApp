@@ -14,6 +14,7 @@ class SideMenuVC: UIViewController {
     
     @IBOutlet weak var dynamicTableView: UITableView!
     var attributes : Attributes?
+    var users : User?
     var menuArrarys : [Menu] = []
     var menuLabels : [String] = []
     var menuIcons : [String] = []
@@ -21,6 +22,10 @@ class SideMenuVC: UIViewController {
     var isChange : Bool = true
     lazy var loginView: LoginVC = {
         let viewController = UIStoryboard(name: Storyboard.main, bundle: nil).instantiateViewController(withIdentifier: ViewIdentifier.loginViewController) as? LoginVC ?? LoginVC()
+        return viewController
+    }()
+    lazy var centerSelectionView: CenterSelectionVC = {
+        let viewController = UIStoryboard(name: Storyboard.CenterSelection, bundle: nil).instantiateViewController(withIdentifier: ViewIdentifier.centerSelectionController) as? CenterSelectionVC ?? CenterSelectionVC()
         return viewController
     }()
     

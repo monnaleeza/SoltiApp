@@ -31,6 +31,7 @@ class WelcomeVC: UIViewController,StateDelegate, YouTubePlayerDelegate {
     @IBOutlet weak var checkBoxButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
     var didLoadVideo = false
+    var isWelcomeAccepted = false
     
     var attributes : Attributes?
     var users : User?
@@ -58,10 +59,6 @@ class WelcomeVC: UIViewController,StateDelegate, YouTubePlayerDelegate {
         }) { (success) in
             self.isChecked = !self.isChecked
             if self.isChecked {
-                self.termsofconditionview.delegate = self
-                self.termsofconditionview.users = self.users
-                self.termsofconditionview.centerWelcome = self.centerWelcome
-                self.termsofconditionview.centerLegal = self.centerLegal
                 self.presentDialogViewController(self.termsofconditionview, animationPattern: .fadeInOut)
             }
             UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveLinear, animations: {
@@ -77,14 +74,17 @@ class WelcomeVC: UIViewController,StateDelegate, YouTubePlayerDelegate {
     }
     
     @IBAction func acceptAction(_ sender: Any) {
-        let endpoint = "\(ServerURL.recordURL)\(String(format: EndPoint.welcomeaccepted))"
-        WebServices.shared.getInforByToken((self.users?.token)!,endpoint: endpoint,method:"put") { (success, statusCode, response, detail, message) in
-           if success {
-            Share.shared.saveInfor(users: self.users!)
+        if self.isWelcomeAccepted {
             Share.shared.createFAPanel(attributes: self.attributes!, users: self.users!)
-           }else{
-               showToast(message ?? "")
-           }
+        } else {
+            let endpoint = "\(ServerURL.recordURL)\(String(format: EndPoint.welcomeaccepted))"
+            WebServices.shared.getInforByToken((self.users?.token)!,endpoint: endpoint,method:"put") { (success, statusCode, response, detail, message) in
+               if success {
+                Share.shared.createFAPanel(attributes: self.attributes!, users: self.users!)
+               }else{
+                   showToast(message ?? "")
+               }
+            }
         }
     }
     
@@ -124,28 +124,30 @@ extension WelcomeVC {
             imageView.sd_setImage(with: URL(string: (self.centerWelcome?.media?.url!)!), placeholderImage: nil, options: .refreshCached) { (image, error, type, url) in
             }
         }
+        self.termsofconditionview.delegate = self
+        self.termsofconditionview.users = self.users
+        self.termsofconditionview.centerWelcome = self.centerWelcome
+        self.termsofconditionview.centerLegal = self.centerLegal
     }
     func getCenterWelcome(){
-            let endpoint = "\(ServerURL.baseURL)\(String(format: EndPoint.centerwelcome))"
-            WebServices.shared.getInforByToken((self.users?.token)!,endpoint: endpoint,method:"get") { (success, statusCode, response, detail, message) in
-           if success {
-               let dict = response as! NSDictionary
-               self.centerWelcome = dict.centerWelcomeModel()
-               self.initializeView()
-           }else{
-               showToast(message ?? "")
-           }
+        Share.shared.processCenterWelcome(users: self.users!) { (centerWelcome, message) in
+            if let centerWelcome = centerWelcome {
+                self.termsofconditionview.centerWelcome = centerWelcome
+            }
+            if let message = message {
+                showToast(message)
+            }
         }
     }
     func getCenterLegal(){
-        let endpoint = "\(ServerURL.baseURL)\(String(format: EndPoint.centerlegal))"
-        WebServices.shared.getInforByToken((self.users?.token)!,endpoint: endpoint,method:"get") { (success, statusCode, response, detail, message) in
-           if success {
-               let dict = response as! NSDictionary
-               self.centerLegal = dict.centerLegalModel()
-           }else{
-               showToast(message ?? "")
-           }
+        Share.shared.processCenterLegal(users: self.users!) { (centerLegal, message) in
+            if let centerLegal = centerLegal {
+                self.termsofconditionview.centerLegal = centerLegal
+                self.initializeView()
+            }
+            if let message = message {
+                showToast(message)
+            }
         }
     }
 }

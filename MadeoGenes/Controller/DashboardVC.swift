@@ -1,6 +1,6 @@
 import UIKit
 import FAPanels
-
+import LSDialogViewController
 class DashboardVC : UIViewController, FAPanelStateDelegate {
     @IBOutlet weak var logoSvgView: UIView!
     @IBOutlet weak var logoImage: UIImageView!
@@ -8,6 +8,12 @@ class DashboardVC : UIViewController, FAPanelStateDelegate {
     @IBOutlet weak var NotificationBtn: UIButton!
     @IBOutlet weak var newsTable: UITableView!
     var attributes : Attributes?
+    var users : User?
+    var isLegalAccepted = false
+    lazy var termsofconditionview: TermsOfConditionVC = {
+        let viewController = UIStoryboard(name: Storyboard.Welcome, bundle: nil).instantiateViewController(withIdentifier: ViewIdentifier.termsofconditionController) as? TermsOfConditionVC ?? TermsOfConditionVC()
+        return viewController
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         Share.shared.displayLogo((attributes?.logoUrl)!) { (svg, img, svgview) in
@@ -37,6 +43,9 @@ class DashboardVC : UIViewController, FAPanelStateDelegate {
     @IBAction func receiveNotifications(_ sender: Any) {
         showToast("Show Notification")
     }
+    func dismissDialog(){
+        dismissDialogViewController()
+    }
 
 }
 extension DashboardVC : UITableViewDataSource, UITableViewDelegate{
@@ -57,5 +66,27 @@ extension DashboardVC : UITableViewDataSource, UITableViewDelegate{
     
     func initializeView(){
         panel!.delegate = self
+        if isLegalAccepted {
+            self.termsofconditionview.users = self.users
+            self.termsofconditionview.legalDelegate = self
+            self.termsofconditionview.isLegalAccepted = true
+            Share.shared.processCenterWelcome(users: self.users!) { (centerWelcome, message) in
+                if let centerWelcome = centerWelcome {
+                    self.termsofconditionview.centerWelcome = centerWelcome
+                }
+                if let message = message {
+                    showToast(message)
+                }
+            }
+            Share.shared.processCenterLegal(users: self.users!) { (centerLegal, message) in
+                if let centerLegal = centerLegal {
+                    self.termsofconditionview.centerLegal = centerLegal
+                    self.presentDialogViewController(self.termsofconditionview, animationPattern: .fadeInOut)
+                }
+                if let message = message {
+                    showToast(message)
+                }
+            }
+        }
     }
 }

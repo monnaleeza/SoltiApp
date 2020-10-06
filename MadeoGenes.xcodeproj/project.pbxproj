@@ -149,6 +149,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3398580E252C55A500D65875 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F35420F24E59CAC00A9873F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 955FF96E251EB927005A4352;
+			remoteInfo = "MadeoGenes-GC";
+		};
 		4F3E1E1D24E6B732006F6E8F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4F35420F24E59CAC00A9873F /* Project object */;
@@ -604,6 +611,7 @@
 			);
 			dependencies = (
 				4F3E1E1E24E6B732006F6E8F /* PBXTargetDependency */,
+				3398580F252C55A500D65875 /* PBXTargetDependency */,
 			);
 			name = MadeoGenesTests;
 			productName = MadeoGenesTests;
@@ -644,7 +652,7 @@
 					};
 					4F3E1E1724E6B731006F6E8F = {
 						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 4F35421624E59CAC00A9873F;
+						TestTargetID = 955FF96E251EB927005A4352;
 					};
 				};
 			};
@@ -933,6 +941,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3398580F252C55A500D65875 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 955FF96E251EB927005A4352 /* MadeoGenes-GC */;
+			targetProxy = 3398580E252C55A500D65875 /* PBXContainerItemProxy */;
+		};
 		4F3E1E1E24E6B732006F6E8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4F35421624E59CAC00A9873F /* MadeoGenes-SOLTI */;
@@ -1079,9 +1092,9 @@
 			baseConfigurationReference = 9C2AA2C9875A9D9C76349F24 /* Pods-MadeoGenes-SOLTI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = 7VCT72P54V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/MadeoGenes-SOLTI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1090,6 +1103,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.genomcore.solti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				organizationName = SOLTI;
@@ -1102,9 +1116,9 @@
 			baseConfigurationReference = 15D6894AEA8C74DAACB1C46A /* Pods-MadeoGenes-SOLTI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = 7VCT72P54V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/MadeoGenes-SOLTI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1113,6 +1127,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.genomcore.solti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				organizationName = SOLTI;
@@ -1135,7 +1150,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MadeoGenes.app/MadeoGenes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MadeoGenes-GC.app/MadeoGenes-GC";
 			};
 			name = Debug;
 		};
@@ -1154,7 +1169,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MadeoGenes.app/MadeoGenes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MadeoGenes-GC.app/MadeoGenes-GC";
 			};
 			name = Release;
 		};
