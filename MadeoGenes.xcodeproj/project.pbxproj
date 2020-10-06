@@ -1178,7 +1178,8 @@
 			baseConfigurationReference = C85C4CF47512D972EA732575 /* Pods-MadeoGenes-GC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 7VCT72P54V;
 				INFOPLIST_FILE = "$(SRCROOT)/MadeoGenes-GC-Info.plist";
@@ -1190,6 +1191,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.genomcore.gc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				organizationName = GC;
