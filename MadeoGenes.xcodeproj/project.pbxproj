@@ -1178,7 +1178,7 @@
 			baseConfigurationReference = C85C4CF47512D972EA732575 /* Pods-MadeoGenes-GC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 7VCT72P54V;
 				INFOPLIST_FILE = "$(SRCROOT)/MadeoGenes-GC-Info.plist";
@@ -1202,7 +1202,7 @@
 			baseConfigurationReference = 0F74BA059C766990D6F13AD1 /* Pods-MadeoGenes-GC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 7VCT72P54V;
 				INFOPLIST_FILE = "$(SRCROOT)/MadeoGenes-GC-Info.plist";
